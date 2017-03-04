@@ -21,21 +21,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ggJ-XK-Mwo">
-                                <rect key="frame" x="163" y="257" width="48" height="153.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ggJ-XK-Mwo">
+                                <rect key="frame" x="110.5" y="257" width="153" height="153.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M9R-ue-9xf">
-                                        <rect key="frame" x="0.0" y="0.0" width="48" height="95.5"/>
+                                        <rect key="frame" x="53" y="0.0" width="47" height="95.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="80"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b0k-sl-SAp">
-                                        <rect key="frame" x="0.0" y="105.5" width="48" height="48"/>
+                                        <rect key="frame" x="0.0" y="105.5" width="153" height="48"/>
+                                        <gestureRecognizers/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                        <state key="normal" title="Tap"/>
+                                        <state key="normal" title="Tap or Hold"/>
                                         <connections>
                                             <action selector="tapCounter:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3xn-QF-PnJ"/>
+                                            <outletCollection property="gestureRecognizers" destination="Age-K1-UEY" appends="YES" id="kuj-H7-BpP"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -59,6 +61,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.20000000000000001" id="Age-K1-UEY">
+                    <connections>
+                        <action selector="longPressButton:" destination="BYZ-38-t0r" id="FWf-wU-IN3"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1076" y="138.98050974512745"/>
         </scene>

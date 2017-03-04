@@ -13,6 +13,10 @@ class ViewController: UIViewController {
     // MARK: - View Did Load
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+
     }
 
     // MARK: - Outlets
@@ -24,13 +28,22 @@ class ViewController: UIViewController {
 
     // MARK: - Interactions
     @IBAction func tapCounter(_ sender: UIButton) {
-        count = count + 1
-        countLabel.text = String(count)
+        increaseCount()
     }
 
     @IBAction func resetButton(_ sender: UIBarButtonItem) {
         countLabel.text = "0"
         count = 0
+    }
+
+    @IBAction func longPressButton(_ sender: UILongPressGestureRecognizer) {
+        increaseCount()
+    }
+
+    // MARK: - Functions
+    func increaseCount() {
+        count = count + 1
+        countLabel.text = String(count)
     }
 
 
