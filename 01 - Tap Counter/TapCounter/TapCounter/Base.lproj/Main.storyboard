@@ -57,6 +57,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="Lol" destination="M9R-ue-9xf" id="wad-ox-dRe"/>
                         <outlet property="countLabel" destination="M9R-ue-9xf" id="5rV-1v-oOX"/>
                     </connections>
                 </viewController>
@@ -85,7 +86,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iXC-Lo-T4A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="-543.77811094452773"/>
+            <point key="canvasLocation" x="246" y="139"/>
         </scene>
     </scenes>
 </document>
