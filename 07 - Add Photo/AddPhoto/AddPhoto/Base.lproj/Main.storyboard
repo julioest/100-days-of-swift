@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Y9R-qX-bEd">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Add Photo-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="ViewController" customModule="AddPhoto" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="The oonch is the greatest floonch of all Oonchtopia." translatesAutoresizingMaskIntoConstraints="NO" id="8XN-MI-gdV">
+                                <rect key="frame" x="16" y="80" width="343" height="112"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zUH-9i-dDX">
+                                <rect key="frame" x="0.0" y="192" width="375" height="375"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="zUH-9i-dDX" secondAttribute="height" multiplier="1:1" id="3IW-2d-dci"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="8XN-MI-gdV" secondAttribute="bottom" constant="475" id="5m4-5E-2Nd"/>
+                            <constraint firstItem="8XN-MI-gdV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="7R6-vU-GTE"/>
+                            <constraint firstItem="8XN-MI-gdV" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="NEt-OI-dVh"/>
+                            <constraint firstItem="8XN-MI-gdV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="a2C-5d-lup"/>
+                            <constraint firstItem="8XN-MI-gdV" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="16" id="azn-Mj-RtL"/>
+                            <constraint firstItem="zUH-9i-dDX" firstAttribute="top" secondItem="8XN-MI-gdV" secondAttribute="bottom" id="bep-nX-efK"/>
+                            <constraint firstAttribute="trailing" secondItem="zUH-9i-dDX" secondAttribute="trailing" id="gHA-fS-bW2"/>
+                            <constraint firstItem="8XN-MI-gdV" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="16" id="iGT-NQ-T9L"/>
+                            <constraint firstItem="zUH-9i-dDX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="jbw-Yp-oah"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8XN-MI-gdV" secondAttribute="trailing" id="oSu-gU-L4q"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add Photo" id="JFM-u0-w3p">
+                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="hYV-U4-7bP">
+                            <connections>
+                                <action selector="tapCameraButton:" destination="BYZ-38-t0r" id="avH-dU-V1b"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="imageView" destination="zUH-9i-dDX" id="Y4j-Ht-UTj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1076" y="137.18140929535232"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="O5G-dX-l63">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Y9R-qX-bEd" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zok-e0-vUS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="S04-wP-ZmQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="We7-0h-BKS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="133.59999999999999" y="791.15442278860576"/>
+        </scene>
+    </scenes>
+</document>
