@@ -15,22 +15,29 @@ class GroceriesTableViewController: UITableViewController {
 
         // Add Left / Right buttons
         self.navigationItem.leftBarButtonItem = self.editButtonItem
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: nil)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(segueToNewSegue))
 
         // Assigning refresh control
         self.refreshControl = pullToRefreshControl
         pullToRefreshControl.addTarget(self, action: #selector(refreshTable), for: .valueChanged)
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
+
     // MARK: - Properties
     let pullToRefreshControl = UIRefreshControl()
-    let model = Model()
 
     // MARK: - Functions
     func refreshTable() {
         model.data = model.cloudData
         self.tableView.reloadData()
         pullToRefreshControl.endRefreshing()
+    }
+
+    func segueToNewSegue() {
+        performSegue(withIdentifier: "segueToNewGrocery", sender: self)
     }
 
     // MARK: - Table view data source
@@ -52,16 +59,17 @@ class GroceriesTableViewController: UITableViewController {
     }
 
 
+
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
     }
 
-
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            model.data.remove(at: indexPath.row)
             // Delete the row from the data source
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
